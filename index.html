@@ -119,35 +119,50 @@
 </section>
 
   <section id="testimonios" class="py-20 px-6 md:px-16 bg-indigo-50">
-  <div class="max-w-6xl mx-auto text-center">
+  <div class="max-w-3xl mx-auto text-center">
     <h2 class="text-4xl font-bold mb-10 text-indigo-700">Testimonios</h2>
-    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-      <div class="bg-white p-6 rounded-xl shadow-md text-left">
-        <p class="italic">“Luna me ayudó a salir de un momento de mucha confusión sentimental. Gracias a ella pude tomar decisiones con claridad.”</p>
-        <p class="mt-4 font-semibold text-right">– Marta G. (Madrid)</p>
+    <div class="relative">
+      <div id="carousel" class="flex transition-transform duration-500 ease-in-out overflow-hidden rounded-xl shadow-lg">
+        <div class="min-w-full p-6 bg-white text-left">
+          <p class="italic text-lg">“Luna me ayudó a salir de un momento de mucha confusión sentimental. Gracias a ella pude tomar decisiones con claridad.”</p>
+          <p class="mt-4 font-semibold text-right">– Marta G. (Madrid)</p>
+        </div>
+        <div class="min-w-full p-6 bg-white text-left">
+          <p class="italic text-lg">“El ritual para soltar a mi ex fue muy sanador. Me sentí acompañada, comprendida y guiada en todo momento.”</p>
+          <p class="mt-4 font-semibold text-right">– Andrea L. (Valencia)</p>
+        </div>
+        <div class="min-w-full p-6 bg-white text-left">
+          <p class="italic text-lg">“Nunca había sentido tanta paz después de una lectura. Fue honesta, cariñosa y certera.”</p>
+          <p class="mt-4 font-semibold text-right">– Carmen R. (Barcelona)</p>
+        </div>
+        <div class="min-w-full p-6 bg-white text-left">
+          <p class="italic text-lg">“Pensé que era imposible volver a confiar en el amor, pero tras la consulta y el ritual empecé a sanar por dentro.”</p>
+          <p class="mt-4 font-semibold text-right">– Laura P. (Sevilla)</p>
+        </div>
+        <div class="min-w-full p-6 bg-white text-left">
+          <p class="italic text-lg">“Me sentí escuchada y comprendida. No fue solo tarot, fue una experiencia sanadora de verdad.”</p>
+          <p class="mt-4 font-semibold text-right">– Nuria F. (Bilbao)</p>
+        </div>
+        <div class="min-w-full p-6 bg-white text-left">
+          <p class="italic text-lg">“El enfoque de Luna es muy humano. Me ayudó a cortar con energías del pasado y a abrirme de nuevo a la vida.”</p>
+          <p class="mt-4 font-semibold text-right">– Julia M. (Alicante)</p>
+        </div>
       </div>
-      <div class="bg-white p-6 rounded-xl shadow-md text-left">
-        <p class="italic">“El ritual para soltar a mi ex fue muy sanador. Me sentí acompañada, comprendida y guiada en todo momento.”</p>
-        <p class="mt-4 font-semibold text-right">– Andrea L. (Valencia)</p>
-      </div>
-      <div class="bg-white p-6 rounded-xl shadow-md text-left">
-        <p class="italic">“Nunca había sentido tanta paz después de una lectura. Fue honesta, cariñosa y certera.”</p>
-        <p class="mt-4 font-semibold text-right">– Carmen R. (Barcelona)</p>
-      </div>
-      <div class="bg-white p-6 rounded-xl shadow-md text-left">
-        <p class="italic">“Pensé que era imposible volver a confiar en el amor, pero tras la consulta y el ritual empecé a sanar por dentro.”</p>
-        <p class="mt-4 font-semibold text-right">– Laura P. (Sevilla)</p>
-      </div>
-      <div class="bg-white p-6 rounded-xl shadow-md text-left">
-        <p class="italic">“Me sentí escuchada y comprendida. No fue solo tarot, fue una experiencia sanadora de verdad.”</p>
-        <p class="mt-4 font-semibold text-right">– Nuria F. (Bilbao)</p>
-      </div>
-      <div class="bg-white p-6 rounded-xl shadow-md text-left">
-        <p class="italic">“El enfoque de Luna es muy humano. Me ayudó a cortar con energías del pasado y a abrirme de nuevo a la vida.”</p>
-        <p class="mt-4 font-semibold text-right">– Julia M. (Alicante)</p>
+      <div class="flex justify-center mt-6 space-x-4">
+        <button onclick="moveSlide(-1)" class="bg-indigo-500 text-white px-4 py-2 rounded-full shadow hover:bg-indigo-600">⟨</button>
+        <button onclick="moveSlide(1)" class="bg-indigo-500 text-white px-4 py-2 rounded-full shadow hover:bg-indigo-600">⟩</button>
       </div>
     </div>
   </div>
+  <script>
+    let currentIndex = 0;
+    const carousel = document.getElementById('carousel');
+    function moveSlide(step) {
+      const total = carousel.children.length;
+      currentIndex = (currentIndex + step + total) % total;
+      carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
+    }
+  </script>
 </section>
 
   
