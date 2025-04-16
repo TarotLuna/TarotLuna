@@ -155,14 +155,25 @@
     </div>
   </div>
   <script>
-    let currentIndex = 0;
-    const carousel = document.getElementById('carousel');
-    function moveSlide(step) {
-      const total = carousel.children.length;
-      currentIndex = (currentIndex + step + total) % total;
-      carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
-    }
-  </script>
+  let currentIndex = 0;
+  const carousel = document.getElementById('carousel');
+  const totalSlides = carousel.children.length;
+
+  function moveSlide(step) {
+    currentIndex = (currentIndex + step + totalSlides) % totalSlides;
+    updateCarousel();
+  }
+
+  function updateCarousel() {
+    carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
+  }
+
+  function autoSlide() {
+    moveSlide(1);
+  }
+
+  setInterval(autoSlide, 5000); // Cambia de testimonio cada 5 segundos
+</script>
 </section>
 
   
